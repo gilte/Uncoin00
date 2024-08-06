@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequência de Nomes e Animais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        #inputSequence {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sequência de Nomes e Animais</h1>
+    <input type="text" id="inputSequence" placeholder="Digite a sequência de nomes, animais ou números">
+    <button onclick="generateSequence()">Gerar Sequência</button>
+    <p id="sequence"></p>
+
+    <script>
+        const dictionary = {
+            "Ana": "A",
+            "Beatriz": "B",
+            "Carlos": "C",
+            "Daniela": "D",
+            "Eduardo": "E",
+            "Fernanda": "F",
+            "Gabriel": "G",
+            "Helena": "H",
+            "Igor": "I",
+            "João": "J",
+            "Karla": "K",
+            "Lucas": "L",
+            "Maria": "M",
+            "Nina": "N",
+            "Otávio": "O",
+            "Pedro": "P",
+            "Quirino": "Q",
+            "Rita": "R",
+            "Sofia": "S",
+            "Tiago": "T",
+            "Uriel": "U",
+            "Vitória": "V",
+            "William": "W",
+            "Xavier": "X",
+            "Yara": "Y",
+            "Zélia": "Z",
+            "anta": "a",
+            "baleia": "b",
+            "cachorro": "c",
+            "dromedário": "d",
+            "elefante": "e",
+            "foca": "f",
+            "gato": "g",
+            "hamster": "h",
+            "iguana": "i",
+            "jacaré": "j",
+            "kiwi": "k",
+            "leão": "l",
+            "macaco": "m",
+            "naja": "n",
+            "ornitorrinco": "o",
+            "panda": "p",
+            "quati": "q",
+            "rinoceronte": "r",
+            "suricato": "s",
+            "tigre": "t",
+            "urso": "u",
+            "vaca": "v",
+            "wombat": "w",
+            "xexéu": "x",
+            "yak": "y",
+            "zebra": "z",
+            "zero": "0",
+            "um": "1",
+            "dois": "2",
+            "três": "3",
+            "quatro": "4",
+            "cinco": "5",
+            "seis": "6",
+            "sete": "7",
+            "oito": "8",
+            "nove": "9"
+        };
+
+        function generateSequence() {
+            const input = document.getElementById('inputSequence').value;
+            const sequenceContainer = document.getElementById('sequence');
+            sequenceContainer.innerHTML = '';
+
+            let result = [];
+            const items = input.split(',').map(item => item.trim());
+
+            items.forEach(item => {
+                const char = dictionary[item] || '';
+                if (char) {
+                    result.push(char);
+                }
+            });
+
+            // Exibir resultado
+            sequenceContainer.textContent = result.join('');
+        }
+    </script>
+</body>
+</html>
